@@ -1,7 +1,7 @@
 import './App.css';
+import DisplayData from './components/DisplayData/DisplayData';
 import Footer from './components/Footer/Footer';
 import SelectForm from './components/Form/Form';
-import Form from './components/Form/Form';
 import Header from './components/Header/Header';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
             <Header />
             <main>
                 <SelectForm />
+                <DisplayData />
             </main>
             <Footer />
         </>

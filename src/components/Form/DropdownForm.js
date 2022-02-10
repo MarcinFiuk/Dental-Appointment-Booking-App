@@ -1,4 +1,3 @@
-import React from 'react';
 import { Field } from 'formik';
 
 export const dropDownOptions = [
@@ -11,7 +10,7 @@ export const dropDownOptions = [
     { key: 'HYGIENIST TREATMENT', value: 'hygienist' },
 ];
 
-const DropdownForm = ({ onChange }) => {
+const DropdownForm = () => {
     return (
         <div>
             <label htmlFor='specialist'>List of our specialists</label>
