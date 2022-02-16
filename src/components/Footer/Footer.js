@@ -4,16 +4,20 @@ import styled from 'styled-components';
 const Footer = () => {
     return (
         <StyledFooter>
-            <p>&copy; 2022 education project.</p>
             <h3> Marcin Fiuk</h3>
+            <p>&copy; 2022 education project</p>
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
+    display: flex;
+    justify-content: space-between;
     color: var(--mistyBlueLight);
     background-color: var(--blueGray);
     padding-block: 2rem;
+    padding-inline: 5rem;
+
     p,
     h3 {
         --f--2-min: 14.58;

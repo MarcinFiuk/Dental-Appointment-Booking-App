@@ -1,3 +1,7 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+
 :root {
     --fluid-min-width: 320;
     --fluid-max-width: 1140;
@@ -69,3 +73,5 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+
+`;

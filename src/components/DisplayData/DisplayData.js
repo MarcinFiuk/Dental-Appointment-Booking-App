@@ -1,11 +1,33 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import useFetchData from '../../hooks/useFetchData';
 
-const DisplayData = () => {
-    const data = useFetchData('specialists');
+const DisplayData = (/*{ profession }*/) => {
+    const location = useLocation();
+    const data = useFetchData('specialists', location.state);
 
-    console.log('data from display', data);
-    return <div>NEW Data</div>;
+    return (
+        <div>
+            {data.map(({ id, name, surname, availability }) => {
+                return (
+                    <div key={id}>
+                        <h3>{name}</h3>
+                        <h3>{surname}</h3>
+
+                        {availability.workAt.map(({ day, hour }) => {
+                            return (
+                                <div key={day}>
+                                    <p>
+                                        {day}: <span>{hour}</span>
+                                    </p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                );
+            })}
+        </div>
+    );
 };
 
 export default DisplayData;

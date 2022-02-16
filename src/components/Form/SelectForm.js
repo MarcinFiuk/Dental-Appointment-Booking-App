@@ -1,17 +1,18 @@
-import { useState } from 'react';
 import { Formik, Form } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import DropdownForm from './DropdownForm';
 
-const SelectForm = () => {
-    const [formValue, setFormValue] = useState('');
+const SelectForm = (/*{ getProfession }*/) => {
+    const navigate = useNavigate();
 
     const initialValues = {
         specialist: '',
     };
 
     const onSubmit = (value) => {
-        setFormValue(value);
+        navigate('/s', { state: value.specialist });
+        // getProfession(value.specialist);
     };
 
     return (

@@ -8,20 +8,24 @@ const useFetchData = (collectionName, typeOfSpecialist) => {
     useEffect(() => {
         const q = query(
             collection(db, collectionName),
-            where('specializations', 'array-contains', 'orthodontics')
+            where('specializations', 'array-contains', typeOfSpecialist)
         );
 
         const fetchData = async () => {
-            setData([]);
+            const arrWithSpecialists = [];
 
             const querySnapshot = await getDocs(q);
+
             querySnapshot.forEach((doc) => {
-                setData((prev) => [...prev, doc.data()]);
+                const singleElement = { ...doc.data(), id: doc.id };
+                arrWithSpecialists.push(singleElement);
             });
+
+            setData(arrWithSpecialists);
         };
 
         fetchData();
-    }, [collectionName]);
+    }, [collectionName, typeOfSpecialist]);
 
     return data;
 };
