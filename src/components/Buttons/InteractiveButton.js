@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
-const InteractiveButton = ({ children }) => {
+const InteractiveButton = ({ children, onClick }) => {
     return (
-        <StyledInteractiveButton>
+        <StyledInteractiveButton onClick={onClick}>
             {children}
             <span>
                 <HiOutlineArrowNarrowRight
                     style={{
-                        width: '100%',
-                        height: '100%',
                         fontSize: '20px',
                     }}
                 />
@@ -21,8 +19,10 @@ const InteractiveButton = ({ children }) => {
 const StyledInteractiveButton = styled.button`
     position: relative;
     background-color: var(--mistyBlueLight);
-    border: none;
-    border-radius: 1rem;
+    border: 1px solid var(--black);
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    font-weight: normal;
     color: var(--black);
     width: 115px;
     text-indent: 0;

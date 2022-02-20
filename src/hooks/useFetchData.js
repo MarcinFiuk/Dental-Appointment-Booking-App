@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 
-const useFetchData = (collectionName, typeOfSpecialist) => {
+const useFetchData = (collectionName, field, condition, typeOfSpecialist) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         const q = query(
             collection(db, collectionName),
-            where('specializations', 'array-contains', typeOfSpecialist)
+            where(field, condition, typeOfSpecialist)
         );
 
         const fetchData = async () => {

@@ -15,8 +15,8 @@ const StyledHeader = styled.header`
     padding-block: 2rem;
 
     h1 {
-        --font-min: 21;
-        --font-max: 40;
+        --font-min: 24;
+        --font-max: 48;
         font-size: calc(
             ((var(--font-min) / 16) * 1rem) +
                 (var(--font-max) - var(--font-min)) * var(--fluid-bp)

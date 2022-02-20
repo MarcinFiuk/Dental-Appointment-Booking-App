@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import DropdownForm from './DropdownForm';
 
-const SelectForm = (/*{ getProfession }*/) => {
+const SelectForm = () => {
     const navigate = useNavigate();
 
     const initialValues = {
@@ -11,14 +11,13 @@ const SelectForm = (/*{ getProfession }*/) => {
     };
 
     const onSubmit = (value) => {
-        navigate('/s', { state: value.specialist });
-        // getProfession(value.specialist);
+        navigate('specialists', { state: value.specialist });
     };
 
     return (
         <Wrapper>
             <h2>Who would you like to meet? </h2>
-            <p>Choose one specialist to see them availability </p>
+            <p>Choose one specialist to see their availability </p>
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
                 {() => {
                     return (
